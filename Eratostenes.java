@@ -1,18 +1,16 @@
 public class Eratostenes {
     public static void main(String[] args) {
-        System.out.println("Dime un número para saber todos los números primos entre 1 y ese número:");
-        int N = Integer.parseInt(System.console().readLine());
-        int a = 0;
+        System.out.println("Números primos entre 2 y 1000.");
+        int n;
+        boolean Primo = true;
 
-        for (int i = 2; i < N; i++) {
-            boolean esPrimo = true;
-            a = i;
-            if (a % i == 0) {
-                esPrimo = false;
-            } else {
-                esPrimo = true;
-                System.out.println(a);
+        for (n = 2; n < 1000; n++) {
+            for (int i = 2; i < n; i++) {
+
+                if (n % i == 0) Primo = false;
             }
+                if (Primo) System.out.print(" " + n + " ");
+                Primo = true;
         }
     }
 }
